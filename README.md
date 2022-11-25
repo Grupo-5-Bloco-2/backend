@@ -1,5 +1,5 @@
 # backend
 BackEnd do projeto integrador
-Ruan Santos
-Jorge de Souza
-Ederson Carvalho
+Ruan Santos,
+Jorge de Souza,
+Ederson Carvalho,
