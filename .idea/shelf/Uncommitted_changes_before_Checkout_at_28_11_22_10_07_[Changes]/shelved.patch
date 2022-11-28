@@ -1,0 +1,18 @@
+Index: README.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># backend\nBackEnd do projeto integrador\nRuan Santos - Atualizado via Visual Studio\nJorge de Souza,\nEderson Carvalho,\nWillian Lima\nDouglas Cristiano - Cara legal
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/README.md b/README.md
+--- a/README.md	(revision fb8fde19d53ffbb5428f907e3fa64199a159ddcd)
++++ b/README.md	(date 1669640857307)
+@@ -4,4 +4,4 @@
+ Jorge de Souza,
+ Ederson Carvalho,
+ Willian Lima
+-Douglas Cristiano - Cara legal
+\ No newline at end of file
++Douglas Cristiano - Cara legal demais
+\ No newline at end of file
