@@ -2,6 +2,7 @@ package com.getbook.controller;
 
 
 import com.getbook.model.Postagem;
+import com.getbook.model.Tema;
 import com.getbook.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -29,14 +30,9 @@ public class PostagemController {
     }
 
 
-    @GetMapping("/titulo/{titulo}")
+   @GetMapping("/titulo/{tituloLivro}")
     public ResponseEntity<List<Postagem>> getTitulo(@PathVariable String tituloLivro) {
-        if (getTitulo(tituloLivro).equals(tituloLivro)) {
-            return ResponseEntity.ok(postagemRepository.findAllByTituloLivroContainingIgnoreCase(tituloLivro));
-        } else {
-            return ResponseEntity.notFound().build();
-
-        }
+	   return ResponseEntity.ok(postagemRepository.findAllByTituloLivroContainingIgnoreCase(tituloLivro));
     }
 
     @PostMapping

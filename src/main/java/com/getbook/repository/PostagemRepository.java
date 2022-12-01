@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface PostagemRepository extends JpaRepository<Postagem,Long> {
-  List<Postagem>findAllByTituloLivroContainingIgnoreCase(@Param ("titulo_livro") String titulo_livro);
+  List<Postagem>findAllByTituloLivroContainingIgnoreCase(@Param ("tituloLivro") String tituloLivro);
 }

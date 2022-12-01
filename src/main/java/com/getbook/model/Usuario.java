@@ -39,7 +39,7 @@ public class Usuario {
     @NotNull
     private String usuario;
 
-    @Size(min = 8, max =50, message = "A senha deve conter no minimo 8 caracteres")
+    @Size(min = 8, message = "A senha deve conter no minimo 8 caracteres")
     @NotNull
     private String senha;
 
