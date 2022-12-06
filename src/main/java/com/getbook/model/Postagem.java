@@ -1,98 +1,97 @@
 package com.getbook.model;
 
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 @Entity
 @Table(name = "tb_postagens")
 public class Postagem {
-    @ManyToOne
-    @JsonIgnoreProperties("postagem")
-    @NotNull
-    private Tema tema;
 
-    public Tema getTema() {
-        return tema;
-    }
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    public void setTema(Tema tema) {
-        this.tema = tema;
-    }
-    @ManyToOne
-    @JsonIgnoreProperties("postagem")
-    @NotNull
-    private Usuario usuario;
+	@NotBlank
+	@Size(min = 3, max = 255, message = "O tamanho do titulo é entre 3 e 255 caracteres.")
+	private String tituloLivro;
 
-    public Usuario getUsuario() {
-        return usuario;
-    }
+	@Size(min = 3, max = 500, message = "A descrição deve ter entre 3 e 500 caracteres ")
+	private String descricao;
 
-    public void setUsuario(Usuario usuario) {
-        this.usuario = usuario;
-    }
+	@Size(min = 3, max = 500)
+	private String foto;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Size(min = 3, max = 255)
+	private String autor;
 
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	@NotNull
+	private Tema tema;
 
-    @NotBlank
-    @Size(min = 3, max = 255, message = "O tamanho do titulo é entre 3 e 255 caracteres.")
-    private String tituloLivro;
+	@ManyToOne
+	@JsonIgnoreProperties("postagem")
+	@NotNull
+	private Usuario usuario;
 
-    @Size(min = 3, max = 500, message = "A descrição deve ter entre 3 e 500 caracteres ")
-    private String descricao;
+	public Long getId() {
+		return id;
+	}
 
-    @Size(min = 3, max = 500)
-    private String foto;
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Size(min = 3, max =255)
-    private String autor;
+	public String getTituloLivro() {
+		return tituloLivro;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setTituloLivro(String tituloLivro) {
+		this.tituloLivro = tituloLivro;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getDescricao() {
+		return descricao;
+	}
 
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
 
-    public String getDescricao() {
-        return descricao;
-    }
+	public String getFoto() {
+		return foto;
+	}
 
-    public String getTituloLivro() {
-        return tituloLivro;
-    }
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
-    public void setTituloLivro(String tituloLivro) {
-        this.tituloLivro = tituloLivro;
-    }
+	public String getAutor() {
+		return autor;
+	}
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
 
-    public String getFoto() {
-        return foto;
-    }
+	public Tema getTema() {
+		return tema;
+	}
 
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
+	public void setTema(Tema tema) {
+		this.tema = tema;
+	}
 
-    public String getAutor() {
-        return autor;
-    }
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
-    public void setAutor(String autor) {
-        this.autor = autor;
-    }
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 }
