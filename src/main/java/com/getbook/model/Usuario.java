@@ -9,83 +9,78 @@ import java.util.List;
 
 @Entity
 @Table(name = "tb_usuario")
-
 public class Usuario {
 
-    @OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
-    @JsonIgnoreProperties("usuario")
-    @NotNull
-    private List<Postagem> postagem;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-    public List<Postagem> getPostagem() {
-        return postagem;
-    }
+	@Size(min = 3, max = 255, message = "O nome deve ter entre 2 e 255 caracteres")
+	@NotNull
+	private String nome;
 
-    public void setPostagem(List<Postagem> postagem) {
-        this.postagem = postagem;
-    }
+	@Size(min = 3, max = 50, message = "Digite o seu e-mail")
+	@NotNull
+	private String usuario;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Size(min = 8, message = "A senha deve conter no minimo 8 caracteres")
+	@NotNull
+	private String senha;
 
+	@Size(min = 3, max = 255, message = " Coloque o link da sua foto")
+	private String foto;
 
-    @Size(min = 3, max =255, message = "O nome deve ter entre 2 e 255 caracteres")
-    @NotNull
-    private String nome;
+	@OneToMany(mappedBy = "usuario", cascade = CascadeType.REMOVE)
+	@JsonIgnoreProperties("usuario")
+	//@NotNull
+	private List<Postagem> postagem;
 
+	public Long getId() {
+		return id;
+	}
 
-    @Size(min = 3, max =50, message = "Digite o seu e-mail")
-    @NotNull
-    private String usuario;
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    @Size(min = 8, message = "A senha deve conter no minimo 8 caracteres")
-    @NotNull
-    private String senha;
+	public String getNome() {
+		return nome;
+	}
 
-    public Long getId() {
-        return id;
-    }
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public String getUsuario() {
+		return usuario;
+	}
 
-    public String getNome() {
-        return nome;
-    }
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
+	}
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+	public String getSenha() {
+		return senha;
+	}
 
-    public String getUsuario() {
-        return usuario;
-    }
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+	public String getFoto() {
+		return foto;
+	}
 
-    public String getSenha() {
-        return senha;
-    }
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
 
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+	public List<Postagem> getPostagem() {
+		return postagem;
+	}
 
-    public String getFoto() {
-        return foto;
-    }
-
-    public void setFoto(String foto) {
-        this.foto = foto;
-    }
-
-    @Size(min = 3, max =255, message = " Coloque o link da sua foto")
-    private String foto;
-
-
+	public void setPostagem(List<Postagem> postagem) {
+		this.postagem = postagem;
+	}
 
 }

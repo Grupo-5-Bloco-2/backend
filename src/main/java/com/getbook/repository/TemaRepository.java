@@ -7,11 +7,11 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.getbook.model.Tema;
-
 @Repository
-public interface TemaRepository extends JpaRepository <Tema, Long> {
+public interface TemaRepository extends JpaRepository<Tema, Long> {
 
-	public List <Tema> findAllByGeneroContainingIgnoreCase (@Param("genero") String genero);
-	public List <Tema> findAllByCategoriaContainingIgnoreCase (@Param("categoria") String categoria);
+	public List<Tema> findAllByGeneroContainingIgnoreCase(@Param("genero") String genero);
+
+	public List<Tema> findAllByCategoriaContainingIgnoreCase(@Param("categoria") String categoria);
 
 }
