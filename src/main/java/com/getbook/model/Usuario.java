@@ -2,6 +2,8 @@ package com.getbook.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -21,6 +23,7 @@ public class Usuario {
 
 	@Size(min = 3, max = 50, message = "Digite o seu e-mail")
 	@NotNull
+	@Schema(example = "email@email.com.br")
 	private String usuario;
 
 	@Size(min = 8, message = "A senha deve conter no minimo 8 caracteres")
